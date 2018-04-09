@@ -325,12 +325,8 @@ window.onload = function() {
     //Renderer object & GUI
     BezierRenderer(canvas);
     
-    var gui = new dat.GUI({autoPlace: false});
+    var gui = new dat.GUI();
 
-    $(".initial-content").append(gui.domElement);
-    gui.domElement.style.position = "absolute";
-    gui.domElement.style.top = 0;
-    $(".initial-content").css("position","relative");
 
 
     var segcount = document.createElement('p');
