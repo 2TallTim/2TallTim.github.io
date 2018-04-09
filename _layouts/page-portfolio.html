@@ -7,8 +7,6 @@ layout: default
     <article class="entry-wrap">
       <div class="entry-content">
         {{ content }}
-
-<h2>Portfolio</h2>
 <div class="entries-{{ page.entries_layout | default: 'list' }}">
   {% include documents-collection-portfolio.html collection=page.collection sort_by=page.sort_by sort_order=page.sort_order %}
 </div>
