@@ -1,0 +1,147 @@
+/*!
+ * Basically Basic Jekyll Theme 1.4.0
+ * Copyright 2017-2018 Michael Rose - mademistakes | @mmistakes
+ * Free for personal and commercial use under the MIT license
+ * https://github.com/mmistakes/jekyll-theme-basically-basic/blob/master/LICENSE.md
+*/
+
+@import "basically-basic/functions";
+@import "basically-basic/variables";
+@import "basically-basic/mixins";
+@import "basically-basic/vendor/breakpoint/breakpoint";
+@include breakpoint-set("to ems", true);
+@import "basically-basic/vendor/susy/susy";
+
+/* Core CSS */
+@import "basically-basic/reset";
+@import "basically-basic/base";
+@import "basically-basic/layout";
+@import "basically-basic/tables";
+
+/* Components */
+@import "basically-basic/global";
+@import "basically-basic/sidebar";
+@import "basically-basic/navigation";
+@import "basically-basic/search";
+@import "basically-basic/footer";
+@import "basically-basic/entries";
+@import "basically-basic/buttons";
+@import "basically-basic/icons";
+@import "basically-basic/intro";
+@import "basically-basic/navicons";
+@import "basically-basic/contact-lists";
+@import "basically-basic/syntax-highlighting";
+@import "basically-basic/responsive-embed";
+
+/* Utility classes */
+@import "basically-basic/utilities";
+
+/* Print */
+@import "basically-basic/print";
+
+.entries-portfolio{
+	display: grid;
+	grid-template-columns: repeat(auto-fill,minmax(500px,1fr));
+	grid-gap: 1em;
+}
+.entry-portfolio{
+	position: relative;
+	padding-bottom: 0;
+	h3,p{
+	    color: rgba(255,255,255,0);
+	    transition: color 0.5s,padding-top 1s;
+	    transition-timing-function: ease, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	}
+	h3{
+		padding-top: 2%;
+		transition: color 0.5s,padding-top 1s;
+	}
+	.entry-image{
+		margin-bottom: 0;
+	}
+}
+.inner-portfolio{
+	max-width: inherit;
+}
+.entry-excerpt-portfolio{
+	position: absolute;
+	top:0;
+	height: 100%;
+	width: 100%;
+	transition: background-color 0.5s, border 0.3s;
+    border: 1px solid #B03422;
+    padding: 0 2%;
+}
+.entry-portfolio:hover{
+	.entry-excerpt-portfolio{
+	    background-color: rgba(0,0,0,0.7);
+	    transition: background-color 0.3s, border 0.1s;
+	    border: 3px solid #F0472E;
+	}
+	h3,p{
+		color: rgba(255,255,255,1);
+	    
+	    transition: color 0.3s;
+	    transition-timing-function: ease, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	}
+	h3{
+		padding-top: 10%;
+		transition: color 0.3s,padding-top 0.3s;
+	}
+}
+
+.responsive-video-container {
+  position: relative;
+  margin-bottom: 1em;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+
+  iframe,
+  object,
+  embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+.title-area{
+	float:left;
+	clear: both;
+	width: 100%;
+	ul{
+		margin:0;
+		float: right;
+
+	}
+	li{
+		float:right;
+		list-style: none;
+		padding-left: 1em;
+		padding:1.8125rem 1rem;
+		>a{
+			text-decoration:none;
+			color: $accent-color;
+			min-height: 50px;
+			align-items: center;
+			display:flex;
+		}
+	}
+	
+	h2{
+		font-size: 24px;
+		margin-bottom: 0;
+	}
+	h1,p{
+		float: left;
+	}
+
+}
+#masthead{
+		@include clearfix;
+}

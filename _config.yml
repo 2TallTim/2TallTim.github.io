@@ -26,10 +26,11 @@ github_username:  2TallTim
 
 # Build settings
 markdown: kramdown
-theme: minima
+remote_theme: "mmistakes/jekyll-theme-basically-basic"
 plugins:
   - jekyll-feed
-
+  - jekyll-paginate
+  
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
@@ -41,3 +42,16 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+collections:
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
+defaults:
+  # _portfolio
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: page
+      author_profile: false
+      classes: wide

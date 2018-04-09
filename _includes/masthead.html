@@ -1,0 +1,42 @@
+{% if site.logo contains '://' %}
+  {% assign site_logo = site.logo %}
+{% else %}
+  {% assign site_logo = site.logo | relative_url %}
+{% endif %}
+
+<header id="masthead">
+  <div class="inner">
+    <div class="title-area">
+      {% if page.url == '/' %}
+        <h1 class="site-title">
+          <a href="{{ '/' | relative_url }}">
+            {% if site.logo %}<img src="{{ site_logo }}" alt="" class="site-logo">{% endif %}
+            <span>{{ site.title | escape }}</span>
+          </a>
+        </h1>
+        <ul>
+
+      {% else %}
+        <p class="site-title">
+          <a href="{{ '/' | relative_url }}">
+            {% if site.logo %}<img src="{{ site_logo }}" alt="" class="site-logo">{% endif %}
+            <span>{{ site.title | escape }}</span>
+          </a>
+        </p>
+      {% endif %}
+{% assign default_paths = site.pages | map: "path" %}
+{% assign page_paths = site.data.theme.navigation_pages | default: default_paths %}
+{% for path in page_paths %}
+{% assign my_page = site.pages | where: "path", path | first %}
+{% if my_page.title %}
+          <li>
+            <a href="{{ my_page.url | relative_url }}">
+              <h2>{{ my_page.title | escape }}</h2>
+            </a>
+          </li>
+{% endif %}
+{% endfor %}
+    </div>
+  </div>
+</header>
+

@@ -1,6 +1,10 @@
 ---
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: home
+layout: page-portfolio
+collection: portfolio
+entries_layout: portfolio
+sort_by: date
+sort_order: reverse
 ---
+<div style="width:80%; margin-left: 10%">
+{% include video id="199558822" provider="vimeo"%}
+</div>
